@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "orquestador-multi-agente"
+version = "0.1.0"
+description = "Orquestador multi-agente de análisis e investigación"
+authors = []
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+langgraph = "^1.2"
+langgraph-checkpoint-sqlite = "^3.1"
+langchain = "^1.0"
+langchain-core = "^1.0"
+langchain-classic = "^1.0"
+langchain-community = "^0.4"
+langchain-google-genai = "^4.4"
+langchain-pinecone = "^0.2.10"
+langchain-text-splitters = "^1.0"
+pinecone = "^7.0"
+rank_bm25 = "^0.2"
+pypdf = "^6.0"
+pydantic = "^2.0"
+python-dotenv = "^1.0"
+aiofiles = "^24.1"
+aiosqlite = "^0.20"
+tiktoken = "^0.9"
+

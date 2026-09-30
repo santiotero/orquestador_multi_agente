@@ -1,0 +1,23 @@
+# Secretos
+config/.env
+
+# Artefactos en runtime
+orquestador.db
+orquestador.db-*
+src/vectorstore/*.pickle
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ruff.toml
+ruff.toml
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
