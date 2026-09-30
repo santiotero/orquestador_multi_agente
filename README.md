@@ -6,6 +6,9 @@ RAG híbrido BM25/Pinecone) y `analista` (ReAct + calculadora segura)— y cierr
 con un nodo de **síntesis** que redacta la respuesta final. Cada sesión deja una
 traza en formato JSON Lines (`.jsonl`).
 
+# Demo notebook/colab
+demo_orquestador_colab.ipynb
+
 # Compatibilidad
 
 Python 3.12/3.13 (LangGraph 1.2+, LangChain 1.0+).
