@@ -81,17 +81,37 @@ poetry run python main.py
 ```
 
 ```
-[sesión] thread_id=sesion-99f16779e220
+[sesión] thread_id=sesion-afb062c695a6
 [config] modelo=gemini-3.1-flash-lite | iteraciones por agente=3 | intentos máx=3
 
 Escribí tu pregunta. 'salir', 'exit' o 'q' cierran la sesión.
 
-Tú: Explica qué es una clase en Python segun la documentacion y ademas calcula 15% de 250.
-[supervisor] -> investigador: Busca en la documentación oficial de Python la definición ...
-[supervisor] -> analista: Calcula el 15% de 250. Asegúrate de mostrar el procedimiento ...
-[supervisor] -> sintesis: Redacta la respuesta final integrando la definición ...
+Tú: Una API lee 400 millones de filas y escribe 20 millones al mes en DynamoDB ($0,125 y $1,25 por millón). ¿Cuánto cuestan las operaciones?
 
-Agente: ### 1. ¿Qué es una clase en Python? ... ### 2. Cálculo solicitado -> 37.5
+[supervisor] -> investigador: Busca y confirma la estructura de precios actual de DynamoDB para operaciones de lectura y escritura, específicamente validando si los precios de $0,125 por millón de lecturas y $1,25 por millón de escrituras son correctos para el modelo de capacidad bajo demanda o aprovisionada.
+
+[supervisor] -> analista: Calcula el costo mensual total basado en los siguientes datos: 400 millones de lecturas a $0,125 por millón y 20 millones de escrituras a $1,25 por millón. Presenta el desglose de cada operación y la suma final.
+
+[supervisor] -> sintesis: Redacta la respuesta final consolidando la información sobre el modelo de precios bajo demanda de DynamoDB y el desglose de costos calculado ($75,00 mensuales).
+
+Agente: Para calcular el costo mensual de las operaciones en Amazon DynamoDB bajo el modelo de **capacidad bajo demanda**, hemos validado las tarifas y realizado el desglose correspondiente:
+
+### Estructura de costos (Modelo bajo demanda)
+*   **Lecturas:** $0,125 USD por millón de solicitudes.
+*   **Escrituras:** $1,25 USD por millón de solicitudes.
+
+### Desglose de costos mensuales
+Basado en un volumen de 400 millones de lecturas y 20 millones de escrituras al mes, el cálculo es el siguiente:
+
+| Operación | Volumen | Tarifa (por millón) | Costo Total |
+| :--- | :--- | :--- | :--- |
+| **Lecturas** | 400 millones | $0,125 | $50,00 |
+| **Escrituras** | 20 millones | $1,25 | $25,00 |
+| **Total** | | | **$75,00** |
+
+**Resumen:** El costo mensual total por las operaciones de lectura y escritura especificadas es de **$75,00 USD**.
+
+*Nota: Este cálculo contempla exclusivamente las operaciones de lectura y escritura. No incluye costos adicionales por almacenamiento de datos, transferencias de red o copias de seguridad, los cuales se facturan por separado según el uso real.*
 
 Tú: salir
 ```
